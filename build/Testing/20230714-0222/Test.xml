@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20230714-0222-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.18.4"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="1811dc43ae8f"
+	OSRelease="5.10.124-linuxkit"
+	OSVersion="#1 SMP PREEMPT Thu Jun 30 08:18:26 UTC 2022"
+	OSPlatform="aarch64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="8"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="1"
+	TotalVirtualMemory="1023"
+	TotalPhysicalMemory="7951"
+	LogicalProcessorsPerPhysical="4"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Jul 14 02:22 UTC</StartDateTime>
+		<StartTestTime>1689301342</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jul 14 02:22 UTC</EndDateTime>
+		<EndTestTime>1689301342</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/test/BaseTest.hpp
+ITest.hpp
+-
+Testable.hpp
+-
+string
+-
+
+../include/test/ITest.hpp
+
+../include/test/Testable.hpp
+
+/workspaces/cpp/src/test/BaseTest.cpp
+test/BaseTest.hpp
+-
+

@@ -1,0 +1,11 @@
+#ifndef _WORKSPACES_CPP_INCLUDE_TESTCASE_GROUP_TESTGROUPFACTORY_HPP_
+#define _WORKSPACES_CPP_INCLUDE_TESTCASE_GROUP_TESTGROUPFACTORY_HPP_
+
+#include <group/TestGroup.hpp>
+
+class TestGroupFactory {
+public:
+    static TestGroup createSimpleTestGroup();
+};
+
+#endif  // _WORKSPACES_CPP_INCLUDE_TESTCASE_GROUP_TESTGROUPFACTORY_HPP_
