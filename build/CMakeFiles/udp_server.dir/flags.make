@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/aarch64-linux-gnu-g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/cpp/include -I/workspaces/cpp/include/test -I/workspaces/cpp/include/group -I/workspaces/cpp/include/socket
+CXX_INCLUDES = -I/workspaces/cpp/include -I/workspaces/cpp/include/socket
 
 CXX_FLAGS = -g
 

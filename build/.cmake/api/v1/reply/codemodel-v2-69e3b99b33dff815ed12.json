@@ -14,7 +14,9 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -29,7 +31,9 @@
 					"name" : "utm_client",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -37,8 +41,22 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "udp_client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-udp_client-Debug-83c6fff5bbaeb7a0a8a9.json",
+					"name" : "udp_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "udp_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-udp_server-Debug-a8c5c108caf96289614b.json",
+					"name" : "udp_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "utm_client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-utm_client-Debug-85ff87427ed22453786d.json",
+					"jsonFile" : "target-utm_client-Debug-53004b710f7c290acafc.json",
 					"name" : "utm_client",
 					"projectIndex" : 0
 				}

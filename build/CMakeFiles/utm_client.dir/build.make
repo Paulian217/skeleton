@@ -76,22 +76,9 @@ include CMakeFiles/utm_client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/utm_client.dir/flags.make
 
-CMakeFiles/utm_client.dir/src/TestManager.cpp.o: CMakeFiles/utm_client.dir/flags.make
-CMakeFiles/utm_client.dir/src/TestManager.cpp.o: ../src/TestManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/utm_client.dir/src/TestManager.cpp.o"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/TestManager.cpp.o -c /workspaces/cpp/src/TestManager.cpp
-
-CMakeFiles/utm_client.dir/src/TestManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utm_client.dir/src/TestManager.cpp.i"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/TestManager.cpp > CMakeFiles/utm_client.dir/src/TestManager.cpp.i
-
-CMakeFiles/utm_client.dir/src/TestManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/TestManager.cpp.s"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/TestManager.cpp -o CMakeFiles/utm_client.dir/src/TestManager.cpp.s
-
 CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o: CMakeFiles/utm_client.dir/flags.make
 CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o: ../src/group/TestGroup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o -c /workspaces/cpp/src/group/TestGroup.cpp
 
 CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.i: cmake_force
@@ -104,7 +91,7 @@ CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.s: cmake_force
 
 CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o: CMakeFiles/utm_client.dir/flags.make
 CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o: ../src/group/TestGroupFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o -c /workspaces/cpp/src/group/TestGroupFactory.cpp
 
 CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.i: cmake_force
@@ -115,22 +102,22 @@ CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.s"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/group/TestGroupFactory.cpp -o CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.s
 
-CMakeFiles/utm_client.dir/src/main.cpp.o: CMakeFiles/utm_client.dir/flags.make
-CMakeFiles/utm_client.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/utm_client.dir/src/main.cpp.o"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/main.cpp.o -c /workspaces/cpp/src/main.cpp
+CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o: CMakeFiles/utm_client.dir/flags.make
+CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o: ../src/socket/Buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o -c /workspaces/cpp/src/socket/Buffer.cpp
 
-CMakeFiles/utm_client.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utm_client.dir/src/main.cpp.i"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/main.cpp > CMakeFiles/utm_client.dir/src/main.cpp.i
+CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/socket/Buffer.cpp > CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.i
 
-CMakeFiles/utm_client.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/main.cpp.s"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/main.cpp -o CMakeFiles/utm_client.dir/src/main.cpp.s
+CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/socket/Buffer.cpp -o CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.s
 
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o: CMakeFiles/utm_client.dir/flags.make
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o: ../src/test/BaseTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o -c /workspaces/cpp/src/test/BaseTest.cpp
 
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.i: cmake_force
@@ -143,7 +130,7 @@ CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.s: cmake_force
 
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o: CMakeFiles/utm_client.dir/flags.make
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o: ../src/test/simple/SimpleTestA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o -c /workspaces/cpp/src/test/simple/SimpleTestA.cpp
 
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.i: cmake_force
@@ -156,7 +143,7 @@ CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.s: cmake_force
 
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o: CMakeFiles/utm_client.dir/flags.make
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o: ../src/test/simple/SimpleTestB.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o -c /workspaces/cpp/src/test/simple/SimpleTestB.cpp
 
 CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.i: cmake_force
@@ -167,29 +154,57 @@ CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.s"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/test/simple/SimpleTestB.cpp -o CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.s
 
+CMakeFiles/utm_client.dir/src/main.cpp.o: CMakeFiles/utm_client.dir/flags.make
+CMakeFiles/utm_client.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/utm_client.dir/src/main.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/main.cpp.o -c /workspaces/cpp/src/main.cpp
+
+CMakeFiles/utm_client.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utm_client.dir/src/main.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/main.cpp > CMakeFiles/utm_client.dir/src/main.cpp.i
+
+CMakeFiles/utm_client.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/main.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/main.cpp -o CMakeFiles/utm_client.dir/src/main.cpp.s
+
+CMakeFiles/utm_client.dir/src/TestManager.cpp.o: CMakeFiles/utm_client.dir/flags.make
+CMakeFiles/utm_client.dir/src/TestManager.cpp.o: ../src/TestManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/utm_client.dir/src/TestManager.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utm_client.dir/src/TestManager.cpp.o -c /workspaces/cpp/src/TestManager.cpp
+
+CMakeFiles/utm_client.dir/src/TestManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utm_client.dir/src/TestManager.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/TestManager.cpp > CMakeFiles/utm_client.dir/src/TestManager.cpp.i
+
+CMakeFiles/utm_client.dir/src/TestManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utm_client.dir/src/TestManager.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/TestManager.cpp -o CMakeFiles/utm_client.dir/src/TestManager.cpp.s
+
 # Object files for target utm_client
 utm_client_OBJECTS = \
-"CMakeFiles/utm_client.dir/src/TestManager.cpp.o" \
 "CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o" \
 "CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o" \
-"CMakeFiles/utm_client.dir/src/main.cpp.o" \
+"CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o" \
 "CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o" \
 "CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o" \
-"CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o"
+"CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o" \
+"CMakeFiles/utm_client.dir/src/main.cpp.o" \
+"CMakeFiles/utm_client.dir/src/TestManager.cpp.o"
 
 # External object files for target utm_client
 utm_client_EXTERNAL_OBJECTS =
 
-utm_client: CMakeFiles/utm_client.dir/src/TestManager.cpp.o
 utm_client: CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o
 utm_client: CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o
-utm_client: CMakeFiles/utm_client.dir/src/main.cpp.o
+utm_client: CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o
 utm_client: CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o
 utm_client: CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o
 utm_client: CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o
+utm_client: CMakeFiles/utm_client.dir/src/main.cpp.o
+utm_client: CMakeFiles/utm_client.dir/src/TestManager.cpp.o
 utm_client: CMakeFiles/utm_client.dir/build.make
 utm_client: CMakeFiles/utm_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable utm_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable utm_client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/utm_client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

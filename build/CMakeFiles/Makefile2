@@ -72,6 +72,8 @@ CMAKE_BINARY_DIR = /workspaces/cpp/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/udp_client.dir/all
+all: CMakeFiles/udp_server.dir/all
 all: CMakeFiles/utm_client.dir/all
 
 .PHONY : all
@@ -82,9 +84,65 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/udp_client.dir/clean
+clean: CMakeFiles/udp_server.dir/clean
 clean: CMakeFiles/utm_client.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/udp_client.dir
+
+# All Build rule for target.
+CMakeFiles/udp_client.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=1,2,3,4 "Built target udp_client"
+.PHONY : CMakeFiles/udp_client.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/udp_client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/udp_client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/udp_client.dir/rule
+
+# Convenience name for target.
+udp_client: CMakeFiles/udp_client.dir/rule
+
+.PHONY : udp_client
+
+# clean rule for target.
+CMakeFiles/udp_client.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/clean
+.PHONY : CMakeFiles/udp_client.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/udp_server.dir
+
+# All Build rule for target.
+CMakeFiles/udp_server.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=5,6,7,8 "Built target udp_server"
+.PHONY : CMakeFiles/udp_server.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/udp_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/udp_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/udp_server.dir/rule
+
+# Convenience name for target.
+udp_server: CMakeFiles/udp_server.dir/rule
+
+.PHONY : udp_server
+
+# clean rule for target.
+CMakeFiles/udp_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/clean
+.PHONY : CMakeFiles/udp_server.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/utm_client.dir
@@ -93,12 +151,12 @@ clean: CMakeFiles/utm_client.dir/clean
 CMakeFiles/utm_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target utm_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Built target utm_client"
 .PHONY : CMakeFiles/utm_client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/utm_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/utm_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cpp/build/CMakeFiles 0
 .PHONY : CMakeFiles/utm_client.dir/rule

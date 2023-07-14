@@ -130,6 +130,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named udp_client
+
+# Build rule for target.
+udp_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udp_client
+.PHONY : udp_client
+
+# fast build rule for target.
+udp_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/build
+.PHONY : udp_client/fast
+
+#=============================================================================
+# Target rules for targets named udp_server
+
+# Build rule for target.
+udp_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udp_server
+.PHONY : udp_server
+
+# fast build rule for target.
+udp_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/build
+.PHONY : udp_server/fast
+
+#=============================================================================
 # Target rules for targets named utm_client
 
 # Build rule for target.
@@ -250,6 +276,123 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/main_udpclient.o: src/main_udpclient.cpp.o
+
+.PHONY : src/main_udpclient.o
+
+# target to build an object file
+src/main_udpclient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/main_udpclient.cpp.o
+.PHONY : src/main_udpclient.cpp.o
+
+src/main_udpclient.i: src/main_udpclient.cpp.i
+
+.PHONY : src/main_udpclient.i
+
+# target to preprocess a source file
+src/main_udpclient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/main_udpclient.cpp.i
+.PHONY : src/main_udpclient.cpp.i
+
+src/main_udpclient.s: src/main_udpclient.cpp.s
+
+.PHONY : src/main_udpclient.s
+
+# target to generate assembly for a file
+src/main_udpclient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/main_udpclient.cpp.s
+.PHONY : src/main_udpclient.cpp.s
+
+src/main_udpserver.o: src/main_udpserver.cpp.o
+
+.PHONY : src/main_udpserver.o
+
+# target to build an object file
+src/main_udpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o
+.PHONY : src/main_udpserver.cpp.o
+
+src/main_udpserver.i: src/main_udpserver.cpp.i
+
+.PHONY : src/main_udpserver.i
+
+# target to preprocess a source file
+src/main_udpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/main_udpserver.cpp.i
+.PHONY : src/main_udpserver.cpp.i
+
+src/main_udpserver.s: src/main_udpserver.cpp.s
+
+.PHONY : src/main_udpserver.s
+
+# target to generate assembly for a file
+src/main_udpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/main_udpserver.cpp.s
+.PHONY : src/main_udpserver.cpp.s
+
+src/socket/Buffer.o: src/socket/Buffer.cpp.o
+
+.PHONY : src/socket/Buffer.o
+
+# target to build an object file
+src/socket/Buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o
+.PHONY : src/socket/Buffer.cpp.o
+
+src/socket/Buffer.i: src/socket/Buffer.cpp.i
+
+.PHONY : src/socket/Buffer.i
+
+# target to preprocess a source file
+src/socket/Buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.i
+.PHONY : src/socket/Buffer.cpp.i
+
+src/socket/Buffer.s: src/socket/Buffer.cpp.s
+
+.PHONY : src/socket/Buffer.s
+
+# target to generate assembly for a file
+src/socket/Buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.s
+.PHONY : src/socket/Buffer.cpp.s
+
+src/socket/UDPSocket.o: src/socket/UDPSocket.cpp.o
+
+.PHONY : src/socket/UDPSocket.o
+
+# target to build an object file
+src/socket/UDPSocket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o
+.PHONY : src/socket/UDPSocket.cpp.o
+
+src/socket/UDPSocket.i: src/socket/UDPSocket.cpp.i
+
+.PHONY : src/socket/UDPSocket.i
+
+# target to preprocess a source file
+src/socket/UDPSocket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.i
+.PHONY : src/socket/UDPSocket.cpp.i
+
+src/socket/UDPSocket.s: src/socket/UDPSocket.cpp.s
+
+.PHONY : src/socket/UDPSocket.s
+
+# target to generate assembly for a file
+src/socket/UDPSocket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.s
+.PHONY : src/socket/UDPSocket.cpp.s
+
 src/test/BaseTest.o: src/test/BaseTest.cpp.o
 
 .PHONY : src/test/BaseTest.o
@@ -339,6 +482,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... udp_client"
+	@echo "... udp_server"
 	@echo "... utm_client"
 	@echo "... src/TestManager.o"
 	@echo "... src/TestManager.i"
@@ -352,6 +497,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/main_udpclient.o"
+	@echo "... src/main_udpclient.i"
+	@echo "... src/main_udpclient.s"
+	@echo "... src/main_udpserver.o"
+	@echo "... src/main_udpserver.i"
+	@echo "... src/main_udpserver.s"
+	@echo "... src/socket/Buffer.o"
+	@echo "... src/socket/Buffer.i"
+	@echo "... src/socket/Buffer.s"
+	@echo "... src/socket/UDPSocket.o"
+	@echo "... src/socket/UDPSocket.i"
+	@echo "... src/socket/UDPSocket.s"
 	@echo "... src/test/BaseTest.o"
 	@echo "... src/test/BaseTest.i"
 	@echo "... src/test/BaseTest.s"

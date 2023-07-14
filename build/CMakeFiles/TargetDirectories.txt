@@ -1,3 +1,5 @@
 /workspaces/cpp/build/CMakeFiles/edit_cache.dir
+/workspaces/cpp/build/CMakeFiles/udp_client.dir
+/workspaces/cpp/build/CMakeFiles/udp_server.dir
 /workspaces/cpp/build/CMakeFiles/rebuild_cache.dir
 /workspaces/cpp/build/CMakeFiles/utm_client.dir
