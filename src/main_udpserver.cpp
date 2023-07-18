@@ -1,67 +1,45 @@
-#include <signal.h>
-#include <socket/UDPSocket.h>
+// echo_server.c
+#include <socket/UDPSocketServer.h>
 
-#include <atomic>
-#include <map>
-#include <mutex>
-#include <sstream>
-#include <thread>
+void error_handling(char* message);
 
-using namespace std;
+int main(int argc, char* argv[]) {
+    int sock;
+    int str_len;
+    socklen_t clnt_adr_sz;
 
-static mutex mtx;
-static atomic_bool thread_stop(true);
-static void onSigTerm(int arg) { thread_stop.store(true); }
+    struct sockaddr_in serv_adr, clnt_adr;
+    if (argc != 2) {
+        printf("Usage : %s <port> \n", argv[0]);
+        exit(1);
+    }
 
-int main() {
-    signal(SIGTERM, onSigTerm);
-    thread th = thread([&]() {
-        SocketFd socketId;
-        UDPSocketServer server(socketId);
-        if (server.Bind(8082) < 0) {
-            return;
+    UDPSocketServer server(sock);
+    if (sock == -1)
+        error_handling("UDP socket creation error");
+
+    if (server.Open(SocketAddressIn("0.0.0.0", atoi(argv[1]))) == -1)
+        error_handling("bind() error");
+
+    while (1) {
+        SocketAddressIn sockaddrin;
+        ByteBuffer buffer;
+        if (-1 == server.Read(buffer, sockaddrin)) {
+            error_handling("read() error");
         }
 
-        if (server.Listen() < 0) {
-            return;
+        printf("Message from client: \"%s\"\n", buffer.data());
+
+        if (-1 == server.Write(buffer, sockaddrin)) {
+            error_handling("write() error");
         }
-
-        map<SocketFd, thread> threadPool;
-
-        int repeat = 0;
-        thread_stop.store(false);
-        while (!thread_stop.load()) {
-            auto clientSocketId = server.Accept();
-            thread socketRunner = thread([&, clientSocketId]() {
-                Buffer received;
-                Buffer sending;
-
-                server.Read(clientSocketId, received);
-
-                stringstream strstream;
-                strstream << "Reply from UDPServer : " << string(received.get().begin(), received.get().end());
-                sending = Buffer(strstream.str());
-                server.Write(clientSocketId, sending);
-
-                server.Close(clientSocketId);
-                unique_lock<mutex> lock(mtx);
-                threadPool.erase(clientSocketId);
-            });
-
-            unique_lock<mutex> lock(mtx);
-            threadPool[clientSocketId] = std::move(socketRunner);
-        }
-
-        for (auto& pth : threadPool) {
-            server.Close(pth.first);
-            if (pth.second.joinable()) {
-                pth.second.join();
-            }
-        }
-
-        server.Close();
-    });
-
-    th.join();
+    }
+    server.Close();
     return 0;
+}
+
+void error_handling(char* message) {
+    fputs(message, stderr);
+    fputc('\n', stderr);
+    exit(1);
 }

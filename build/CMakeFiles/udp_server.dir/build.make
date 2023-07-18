@@ -76,31 +76,31 @@ include CMakeFiles/udp_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/udp_server.dir/flags.make
 
-CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o: ../src/socket/Buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o -c /workspaces/cpp/src/socket/Buffer.cpp
+CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o: ../src/socket/SocketAddress.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o -c /workspaces/cpp/src/socket/SocketAddress.cpp
 
-CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.i"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/socket/Buffer.cpp > CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.i
+CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/socket/SocketAddress.cpp > CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.i
 
-CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.s"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/socket/Buffer.cpp -o CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.s
+CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/socket/SocketAddress.cpp -o CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.s
 
-CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o: ../src/socket/UDPSocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o -c /workspaces/cpp/src/socket/UDPSocket.cpp
+CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o: ../src/socket/UDPSocketServer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o -c /workspaces/cpp/src/socket/UDPSocketServer.cpp
 
-CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.i"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/socket/UDPSocket.cpp > CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.i
+CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cpp/src/socket/UDPSocketServer.cpp > CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.i
 
-CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.s"
-	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/socket/UDPSocket.cpp -o CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.s
+CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cpp/src/socket/UDPSocketServer.cpp -o CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.s
 
 CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o: CMakeFiles/udp_server.dir/flags.make
 CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o: ../src/main_udpserver.cpp
@@ -117,15 +117,15 @@ CMakeFiles/udp_server.dir/src/main_udpserver.cpp.s: cmake_force
 
 # Object files for target udp_server
 udp_server_OBJECTS = \
-"CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o" \
-"CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o" \
+"CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o" \
+"CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o" \
 "CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o"
 
 # External object files for target udp_server
 udp_server_EXTERNAL_OBJECTS =
 
-udp_server: CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o
-udp_server: CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o
+udp_server: CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o
+udp_server: CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o
 udp_server: CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o
 udp_server: CMakeFiles/udp_server.dir/build.make
 udp_server: CMakeFiles/udp_server.dir/link.txt

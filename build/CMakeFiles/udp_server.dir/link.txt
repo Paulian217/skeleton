@@ -1,1 +1,1 @@
-/usr/bin/aarch64-linux-gnu-g++ -g -rdynamic CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o -o udp_server  -lpthread 
+/usr/bin/aarch64-linux-gnu-g++ -g -rdynamic CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o -o udp_server  -lpthread 

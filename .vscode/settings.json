@@ -52,8 +52,11 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "istream": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "map": "cpp",
+        "socket": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: false, ColumnLimit: 150, AccessModifierOffset: -4, FixNamespaceComments: false }",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "C_Cpp.default.compilerPath": "/usr/bin/clang"
 }

@@ -31,9 +31,6 @@ CMakeFiles/utm_client.dir/src/main.cpp.o: ../include/test/ITest.hpp
 CMakeFiles/utm_client.dir/src/main.cpp.o: ../include/test/Testable.hpp
 CMakeFiles/utm_client.dir/src/main.cpp.o: ../src/main.cpp
 
-CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o: ../include/socket/Buffer.h
-CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o: ../src/socket/Buffer.cpp
-
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o: ../include/test/BaseTest.hpp
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o: ../include/test/ITest.hpp
 CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o: ../include/test/Testable.hpp

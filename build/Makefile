@@ -330,68 +330,89 @@ src/main_udpserver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/main_udpserver.cpp.s
 .PHONY : src/main_udpserver.cpp.s
 
-src/socket/Buffer.o: src/socket/Buffer.cpp.o
+src/socket/SocketAddress.o: src/socket/SocketAddress.cpp.o
 
-.PHONY : src/socket/Buffer.o
-
-# target to build an object file
-src/socket/Buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o
-.PHONY : src/socket/Buffer.cpp.o
-
-src/socket/Buffer.i: src/socket/Buffer.cpp.i
-
-.PHONY : src/socket/Buffer.i
-
-# target to preprocess a source file
-src/socket/Buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.i
-.PHONY : src/socket/Buffer.cpp.i
-
-src/socket/Buffer.s: src/socket/Buffer.cpp.s
-
-.PHONY : src/socket/Buffer.s
-
-# target to generate assembly for a file
-src/socket/Buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/utm_client.dir/build.make CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.s
-.PHONY : src/socket/Buffer.cpp.s
-
-src/socket/UDPSocket.o: src/socket/UDPSocket.cpp.o
-
-.PHONY : src/socket/UDPSocket.o
+.PHONY : src/socket/SocketAddress.o
 
 # target to build an object file
-src/socket/UDPSocket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o
-.PHONY : src/socket/UDPSocket.cpp.o
+src/socket/SocketAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/SocketAddress.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o
+.PHONY : src/socket/SocketAddress.cpp.o
 
-src/socket/UDPSocket.i: src/socket/UDPSocket.cpp.i
+src/socket/SocketAddress.i: src/socket/SocketAddress.cpp.i
 
-.PHONY : src/socket/UDPSocket.i
+.PHONY : src/socket/SocketAddress.i
 
 # target to preprocess a source file
-src/socket/UDPSocket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.i
-.PHONY : src/socket/UDPSocket.cpp.i
+src/socket/SocketAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/SocketAddress.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.i
+.PHONY : src/socket/SocketAddress.cpp.i
 
-src/socket/UDPSocket.s: src/socket/UDPSocket.cpp.s
+src/socket/SocketAddress.s: src/socket/SocketAddress.cpp.s
 
-.PHONY : src/socket/UDPSocket.s
+.PHONY : src/socket/SocketAddress.s
 
 # target to generate assembly for a file
-src/socket/UDPSocket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.s
-.PHONY : src/socket/UDPSocket.cpp.s
+src/socket/SocketAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/SocketAddress.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.s
+.PHONY : src/socket/SocketAddress.cpp.s
+
+src/socket/UDPSocketClient.o: src/socket/UDPSocketClient.cpp.o
+
+.PHONY : src/socket/UDPSocketClient.o
+
+# target to build an object file
+src/socket/UDPSocketClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocketClient.cpp.o
+.PHONY : src/socket/UDPSocketClient.cpp.o
+
+src/socket/UDPSocketClient.i: src/socket/UDPSocketClient.cpp.i
+
+.PHONY : src/socket/UDPSocketClient.i
+
+# target to preprocess a source file
+src/socket/UDPSocketClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocketClient.cpp.i
+.PHONY : src/socket/UDPSocketClient.cpp.i
+
+src/socket/UDPSocketClient.s: src/socket/UDPSocketClient.cpp.s
+
+.PHONY : src/socket/UDPSocketClient.s
+
+# target to generate assembly for a file
+src/socket/UDPSocketClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/src/socket/UDPSocketClient.cpp.s
+.PHONY : src/socket/UDPSocketClient.cpp.s
+
+src/socket/UDPSocketServer.o: src/socket/UDPSocketServer.cpp.o
+
+.PHONY : src/socket/UDPSocketServer.o
+
+# target to build an object file
+src/socket/UDPSocketServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o
+.PHONY : src/socket/UDPSocketServer.cpp.o
+
+src/socket/UDPSocketServer.i: src/socket/UDPSocketServer.cpp.i
+
+.PHONY : src/socket/UDPSocketServer.i
+
+# target to preprocess a source file
+src/socket/UDPSocketServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.i
+.PHONY : src/socket/UDPSocketServer.cpp.i
+
+src/socket/UDPSocketServer.s: src/socket/UDPSocketServer.cpp.s
+
+.PHONY : src/socket/UDPSocketServer.s
+
+# target to generate assembly for a file
+src/socket/UDPSocketServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.s
+.PHONY : src/socket/UDPSocketServer.cpp.s
 
 src/test/BaseTest.o: src/test/BaseTest.cpp.o
 
@@ -503,12 +524,15 @@ help:
 	@echo "... src/main_udpserver.o"
 	@echo "... src/main_udpserver.i"
 	@echo "... src/main_udpserver.s"
-	@echo "... src/socket/Buffer.o"
-	@echo "... src/socket/Buffer.i"
-	@echo "... src/socket/Buffer.s"
-	@echo "... src/socket/UDPSocket.o"
-	@echo "... src/socket/UDPSocket.i"
-	@echo "... src/socket/UDPSocket.s"
+	@echo "... src/socket/SocketAddress.o"
+	@echo "... src/socket/SocketAddress.i"
+	@echo "... src/socket/SocketAddress.s"
+	@echo "... src/socket/UDPSocketClient.o"
+	@echo "... src/socket/UDPSocketClient.i"
+	@echo "... src/socket/UDPSocketClient.s"
+	@echo "... src/socket/UDPSocketServer.o"
+	@echo "... src/socket/UDPSocketServer.i"
+	@echo "... src/socket/UDPSocketServer.s"
 	@echo "... src/test/BaseTest.o"
 	@echo "... src/test/BaseTest.i"
 	@echo "... src/test/BaseTest.s"

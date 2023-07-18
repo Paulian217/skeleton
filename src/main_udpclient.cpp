@@ -1,44 +1,53 @@
-#include <signal.h>
-#include <socket/UDPSocket.h>
+// uecho_client.c
+#include <socket/UDPSocketClient.h>
 
-#include <atomic>
-#include <sstream>
-#include <thread>
+#include <iostream>
 
-using namespace std;
+void error_handling(char* message);
+int main(int argc, char* argv[]) {
+    int sock;
+    struct sockaddr_in serv_adr, from_adr;
 
-static atomic_bool thread_stop(true);
-static void onSigTerm(int arg) { thread_stop.store(true); }
-
-int main() {
-    signal(SIGTERM, onSigTerm);
-    thread th = thread([&]() {
-        SocketFd socketId;
-        UDPSocketClient client(socketId);
-        if (client.Connect(8082, "127.0.0.1") < 0) {
-            return;
-        }
-
-        int repeat = 0;
-        thread_stop.store(false);
-        Buffer received;
-        Buffer sending;
-
-        while (!thread_stop.load()) {
-            received.clear();
-            client.Read(received);
-
-            stringstream strstream;
-            strstream << "Hello Server : " << (repeat++);
-            sending = Buffer(strstream.str());
-            client.Write(sending);
-        }
-
-        client.Close();
-    });
-
-    if (th.joinable()) {
-        th.join();
+    if (argc != 3) {
+        printf("Usage : %s <IP> <port>\n", argv[0]);
+        exit(1);
     }
+
+    UDPSocketClient client(sock);
+    if (sock == -1)
+        error_handling("socket() error");
+
+    SocketAddressIn sockaddrin(argv[1], atoi(argv[2]));
+    if (client.Open(sockaddrin) == -1)
+        error_handling("open() error");
+
+    while (1) {
+        std::string messagestr;
+        std::cout << "Insert message(q to quit): ";
+        std::cin >> messagestr;
+        // fputs("Insert message(q to quit): ", stdout);
+        // fgets(message, sizeof(message), stdin);
+        // if (!strcmp(message, "q\n") || !strcmp(message, "Q\n"))
+        //     break;
+        if (!messagestr.compare("q") || !messagestr.compare("Q")) {
+            break;
+        }
+
+        (void)client.Write(ByteBuffer(messagestr.begin(), messagestr.end()));
+
+        ByteBuffer buffer;
+        (void)client.Read(buffer);
+        // buffer.insert(buffer.end(), 0);
+
+        messagestr.assign(buffer.begin(), buffer.end());
+        printf("Message from server: \"%s\"\n", messagestr.c_str());
+    }
+    client.Close();
     return 0;
+}
+
+void error_handling(char* message) {
+    fputs(message, stderr);
+    fputc('\n', stderr);
+    exit(1);
 }

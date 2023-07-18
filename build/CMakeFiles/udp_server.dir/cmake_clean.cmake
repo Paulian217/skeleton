@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/udp_server.dir/src/main_udpserver.cpp.o"
-  "CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o"
-  "CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o"
+  "CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o"
+  "CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o"
   "udp_server"
   "udp_server.pdb"
 )

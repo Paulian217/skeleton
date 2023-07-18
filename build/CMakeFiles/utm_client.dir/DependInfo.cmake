@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/cpp/src/group/TestGroup.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/group/TestGroup.cpp.o"
   "/workspaces/cpp/src/group/TestGroupFactory.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o"
   "/workspaces/cpp/src/main.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/main.cpp.o"
-  "/workspaces/cpp/src/socket/Buffer.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o"
   "/workspaces/cpp/src/test/BaseTest.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/test/BaseTest.cpp.o"
   "/workspaces/cpp/src/test/simple/SimpleTestA.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/test/simple/SimpleTestA.cpp.o"
   "/workspaces/cpp/src/test/simple/SimpleTestB.cpp" "/workspaces/cpp/build/CMakeFiles/utm_client.dir/src/test/simple/SimpleTestB.cpp.o"

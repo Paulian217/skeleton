@@ -1,13 +1,13 @@
 [
 {
   "directory": "/workspaces/cpp/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.o -c /workspaces/cpp/src/socket/Buffer.cpp",
-  "file": "/workspaces/cpp/src/socket/Buffer.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_client.dir/src/socket/SocketAddress.cpp.o -c /workspaces/cpp/src/socket/SocketAddress.cpp",
+  "file": "/workspaces/cpp/src/socket/SocketAddress.cpp"
 },
 {
   "directory": "/workspaces/cpp/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.o -c /workspaces/cpp/src/socket/UDPSocket.cpp",
-  "file": "/workspaces/cpp/src/socket/UDPSocket.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_client.dir/src/socket/UDPSocketClient.cpp.o -c /workspaces/cpp/src/socket/UDPSocketClient.cpp",
+  "file": "/workspaces/cpp/src/socket/UDPSocketClient.cpp"
 },
 {
   "directory": "/workspaces/cpp/build",
@@ -16,13 +16,13 @@
 },
 {
   "directory": "/workspaces/cpp/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_server.dir/src/socket/Buffer.cpp.o -c /workspaces/cpp/src/socket/Buffer.cpp",
-  "file": "/workspaces/cpp/src/socket/Buffer.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_server.dir/src/socket/SocketAddress.cpp.o -c /workspaces/cpp/src/socket/SocketAddress.cpp",
+  "file": "/workspaces/cpp/src/socket/SocketAddress.cpp"
 },
 {
   "directory": "/workspaces/cpp/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_server.dir/src/socket/UDPSocket.cpp.o -c /workspaces/cpp/src/socket/UDPSocket.cpp",
-  "file": "/workspaces/cpp/src/socket/UDPSocket.cpp"
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/socket -g -o CMakeFiles/udp_server.dir/src/socket/UDPSocketServer.cpp.o -c /workspaces/cpp/src/socket/UDPSocketServer.cpp",
+  "file": "/workspaces/cpp/src/socket/UDPSocketServer.cpp"
 },
 {
   "directory": "/workspaces/cpp/build",
@@ -38,11 +38,6 @@
   "directory": "/workspaces/cpp/build",
   "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/test -I/workspaces/cpp/include/group -I/workspaces/cpp/include/socket -g -o CMakeFiles/utm_client.dir/src/group/TestGroupFactory.cpp.o -c /workspaces/cpp/src/group/TestGroupFactory.cpp",
   "file": "/workspaces/cpp/src/group/TestGroupFactory.cpp"
-},
-{
-  "directory": "/workspaces/cpp/build",
-  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/workspaces/cpp/include -I/workspaces/cpp/include/test -I/workspaces/cpp/include/group -I/workspaces/cpp/include/socket -g -o CMakeFiles/utm_client.dir/src/socket/Buffer.cpp.o -c /workspaces/cpp/src/socket/Buffer.cpp",
-  "file": "/workspaces/cpp/src/socket/Buffer.cpp"
 },
 {
   "directory": "/workspaces/cpp/build",

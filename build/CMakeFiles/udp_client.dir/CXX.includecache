@@ -6,42 +6,42 @@
 
 #IncludeRegexTransform: 
 
-../include/socket/Buffer.h
-cstdint
+../include/socket/IClientSocket.h
+socket/SocketAddress.h
 -
-memory
+
+../include/socket/SocketAddress.h
+netinet/in.h
 -
+netinet/ip.h
+-
+socket/SocketType.h
+-
+sys/socket.h
+-
+string
+-
+
+../include/socket/SocketType.h
 string
 -
 vector
 -
 
-../include/socket/ISocket.h
-socket/ISocketListener.h
--
-string
+../include/socket/UDPSocketClient.h
+IClientSocket.h
 -
 
-../include/socket/ISocketListener.h
-socket/Buffer.h
+/workspaces/cpp/src/main_udpclient.cpp
+socket/UDPSocketClient.h
+-
+iostream
 -
 
-../include/socket/UDPSocket.h
-socket/ISocket.h
--
-atomic
--
-thread
--
-
-/workspaces/cpp/src/socket/UDPSocket.cpp
+/workspaces/cpp/src/socket/UDPSocketClient.cpp
 arpa/inet.h
 -
-netinet/in.h
--
-netinet/ip.h
--
-socket/UDPSocket.h
+socket/UDPSocketClient.h
 -
 sys/socket.h
 -

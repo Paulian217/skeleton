@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/cpp/src/main_udpclient.cpp" "/workspaces/cpp/build/CMakeFiles/udp_client.dir/src/main_udpclient.cpp.o"
-  "/workspaces/cpp/src/socket/Buffer.cpp" "/workspaces/cpp/build/CMakeFiles/udp_client.dir/src/socket/Buffer.cpp.o"
-  "/workspaces/cpp/src/socket/UDPSocket.cpp" "/workspaces/cpp/build/CMakeFiles/udp_client.dir/src/socket/UDPSocket.cpp.o"
+  "/workspaces/cpp/src/socket/SocketAddress.cpp" "/workspaces/cpp/build/CMakeFiles/udp_client.dir/src/socket/SocketAddress.cpp.o"
+  "/workspaces/cpp/src/socket/UDPSocketClient.cpp" "/workspaces/cpp/build/CMakeFiles/udp_client.dir/src/socket/UDPSocketClient.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
