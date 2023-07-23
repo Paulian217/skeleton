@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 2.8)
+
 project(utm_client)
 
 set(UTM utm_client)
@@ -23,7 +24,7 @@ target_include_directories(${UTM} PUBLIC
 set(UDPServer udp_server)
 add_executable(${UDPServer}
     ${CMAKE_SOURCE_DIR}/src/socket/SocketAddress.cpp
-    ${CMAKE_SOURCE_DIR}/src/socket/UDPSocketServer.cpp
+    ${CMAKE_SOURCE_DIR}/src/socket/UDPSocketServerImpl.cpp
     ${CMAKE_SOURCE_DIR}/src/main_udpserver.cpp
 )
 target_link_libraries(${UDPServer} PRIVATE pthread)
@@ -36,6 +37,7 @@ set(UDPClient udp_client)
 add_executable(${UDPClient}
     ${CMAKE_SOURCE_DIR}/src/socket/SocketAddress.cpp
     ${CMAKE_SOURCE_DIR}/src/socket/UDPSocketClient.cpp
+    ${CMAKE_SOURCE_DIR}/src/socket/UDPSocketClientImpl.cpp
     ${CMAKE_SOURCE_DIR}/src/main_udpclient.cpp
 )
 target_link_libraries(${UDPClient} PRIVATE pthread)

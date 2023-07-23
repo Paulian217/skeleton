@@ -1,19 +1,19 @@
-#ifndef INCLUDE_SOCKET_UDPSOCKETCLIENT_H
-#define INCLUDE_SOCKET_UDPSOCKETCLIENT_H
+#ifndef INCLUDE_SOCKET_TCPSOCKETCLIENT_H
+#define INCLUDE_SOCKET_TCPSOCKETCLIENT_H
 
 #include <socket/ISocketListener.h>
-#include <socket/UDPSocketClientImpl.h>
+#include <socket/TCPSocketClientImpl.h>
 
 #include <thread>
 
 using Thread = std::thread;
 
-class UDPSocketClientCondition;
+class TCPSocketClientCondition;
 
-class UDPSocketClient {
+class TCPSocketClient {
 public:
-    explicit UDPSocketClient(const std::shared_ptr<ISocketListener>& listener);
-    virtual ~UDPSocketClient();
+    explicit TCPSocketClient(const std::shared_ptr<ISocketListener>& listener);
+    virtual ~TCPSocketClient();
 
     SocketResult Connect(const SocketAddressIn& address);
     SocketResult Send(const ByteBuffer& buffer);
@@ -24,9 +24,9 @@ public:
 private:
     bool mIsConnected = false;
     std::unique_ptr<Thread> mReceiver;
-    std::unique_ptr<UDPSocketClientImpl> mImpl;
-    std::unique_ptr<UDPSocketClientCondition> mCondition;
+    std::unique_ptr<TCPSocketClientImpl> mImpl;
+    std::unique_ptr<TCPSocketClientCondition> mCondition;
     const std::shared_ptr<ISocketListener> mListeners;
 };
 
-#endif  // INCLUDE_SOCKET_UDPSOCKETCLIENT_H
+#endif  // INCLUDE_SOCKET_TCPSOCKETCLIENT_H

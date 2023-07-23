@@ -1,5 +1,5 @@
-#ifndef _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETTYPE_H_
-#define _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETTYPE_H_
+#ifndef __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETTYPE_H
+#define __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETTYPE_H
 
 #include <string>
 #include <vector>
@@ -11,8 +11,17 @@ using ByteBuffer = std::vector<unsigned char>;
 const constexpr int NO_OPTION = 0;
 const constexpr int NO_SOCKFD = -1;
 
-enum class SocketInterface { UDP, TCP };
+enum class SocketInterface { UDP,
+                             TCP };
 
-enum class SocketState { CREATED, OPENED, CLOSED };
+enum class SocketState { CREATED,
+                         OPENED,
+                         LISTENING,
+                         CONNECTING,
+                         CLOSED };
 
-#endif  // _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETTYPE_H_
+enum class SocketReturn { OK,
+                          ENDOFFILE,
+                          ERROR };
+
+#endif  // __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETTYPE_H

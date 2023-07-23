@@ -1,5 +1,5 @@
-#ifndef _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETADDRESS_H_
-#define _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETADDRESS_H_
+#ifndef __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETADDRESS_H
+#define __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETADDRESS_H
 
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -11,12 +11,15 @@
 class SocketAddressIn {
 public:
     SocketAddressIn();
-    explicit SocketAddressIn(const std::string& ipv4, const uint32_t& port);
-    explicit SocketAddressIn(const struct sockaddr_in& sockaddr_in);
+    explicit SocketAddressIn(const std::string &ipv4, const uint32_t &port);
+    explicit SocketAddressIn(const struct sockaddr_in &sockaddr_in);
     virtual ~SocketAddressIn();
+
+    std::string getIpv4() const;
+    uint32_t getPort() const;
 
 public:
     struct sockaddr_in sockaddr_in;
 };
 
-#endif  // _WORKSPACES_CPP_INCLUDE_SOCKET_SOCKETADDRESS_H_
+#endif  // __WORKSPACE_UTM_INCLUDE_SOCKET_SOCKETADDRESS_H

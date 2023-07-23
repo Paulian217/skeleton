@@ -1,56 +1,63 @@
-#include <arpa/inet.h>
 #include <socket/UDPSocketClient.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <unistd.h>
 
-UDPSocketClient::UDPSocketClient(SocketFD& socketfd)
-    : mSocketFd(socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)), mSocketState((mSocketFd != NO_SOCKFD) ? SocketState::CREATED : SocketState::CLOSED) {
-    socketfd = mSocketFd;
+#include <atomic>
+#include <condition_variable>
+#include <future>
+
+class UDPSocketClientCondition {
+public:
+    std::atomic_bool quit;
+    std::condition_variable condition;
+    std::mutex mutex;
+};
+
+UDPSocketClient::UDPSocketClient(const std::shared_ptr<ISocketListener>& listener)
+    : mReceiver(), mImpl(), mCondition(new UDPSocketClientCondition), mListeners(listener) {
+    SocketFD socketfd;
+    mImpl = std::move(std::make_unique<UDPSocketClientImpl>(socketfd));
 }
 
-UDPSocketClient::~UDPSocketClient() { Close(); }
+UDPSocketClient::~UDPSocketClient() { Disconnect(); }
 
-SocketResult UDPSocketClient::Open(const SocketAddressIn& addr) {
+SocketResult UDPSocketClient::Connect(const SocketAddressIn& address) {
+    SocketResult result = -1;
+    (void)mImpl->Open(address);
+
+    mReceiver = std::move(std::make_unique<std::thread>([this]() {
+        while (!mCondition->quit.load()) {
+            ByteBuffer buffer;
+            if (mImpl->Read(buffer) != -1) {
+                mListeners->onBufferReceived(buffer);
+            }
+        }
+    }));
+
+    mIsConnected = true;
+    return result;
+}
+
+SocketResult UDPSocketClient::Send(const ByteBuffer& buffer) {
     SocketResult result = 0;
-    mSocketAddress = addr;
+    std::future<int> future = std::async(std::launch::async, [&] { return mImpl->Write(buffer); });
+    result = future.get();
     return result;
 }
 
-SocketResult UDPSocketClient::Write(const ByteBuffer& buffer) {
-    SocketResult result = -1;
-    auto sendsize =
-        sendto(mSocketFd, buffer.data(), buffer.size(), 0, (struct sockaddr*)&mSocketAddress.sockaddr_in, sizeof(mSocketAddress.sockaddr_in));
-    if (sendsize != -1) {
-        result = 0;
-    }
-    return result;
-}
-
-SocketResult UDPSocketClient::Read(ByteBuffer& buffer) {
-    SocketResult result = -1;
-
-    unsigned char buf[65535];
-    struct sockaddr_in sockaddr_in;
-    socklen_t socklen = socklen_t();
-
-    auto recvsize = recvfrom(mSocketFd, buf, sizeof(buf), 0, (struct sockaddr*)&sockaddr_in, &socklen);
-    if (recvsize == -1) {
-        fprintf(stderr, "UDPSocketClient::%s() receive error\n", __func__);
+SocketResult UDPSocketClient::Disconnect() {
+    SocketResult result = 0;
+    if (!mIsConnected) {
         return result;
     }
 
-    buffer.assign(&buf[0], &buf[recvsize]);
-    result = 0;
+    mCondition->quit.store(true);
+
+    if (mReceiver->joinable()) {
+        mReceiver->join();
+    }
+    result = mImpl->Close();
     return result;
 }
 
-SocketResult UDPSocketClient::Close() {
-    SocketResult result = 0;
-    if (mSocketFd == NO_SOCKFD) {
-        return result;
-    }
-    close(mSocketFd);
-    mSocketFd = NO_SOCKFD;
-    return result;
-}
+std::string UDPSocketClient::getIpAddress() const { return mImpl->getIpAddress(); }
+
+uint32_t UDPSocketClient::getPortNumber() const { return mImpl->getPortNumber(); }

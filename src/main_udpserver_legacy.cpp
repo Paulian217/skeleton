@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    UDPSocketServerImpl server(sock);
+    UDPSocketServer server(sock);
     if (sock == -1)
         error_handling("UDP socket creation error");
 
