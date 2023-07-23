@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
     for (auto i = 0; i <= MAX; i++) {
         ByteBuffer buffer(16);
         sprintf((char*)buffer.data(), "%d", i);
-        (void)client.Send(buffer);
+        (void)client.Post(buffer);
 
         // std::this_thread::sleep_for(std::chrono::microseconds(1));
     }
@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
     // condition.wait(lock, [&] { return received == MAX; });
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-    printf("Disconnect from %s:%u\n", client.getIpAddress().c_str(), client.getPortNumber());
+    printf("Disconnect from %s:%u\n", client.GetIpAddress().c_str(), client.GetPortNumber());
     (void)client.Disconnect();
     return 0;
 }

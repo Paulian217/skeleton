@@ -14,7 +14,7 @@ public:
     SocketResult Close() override;
     SocketResult Configure(const int& opt, const int& optname, const void* data, const size_t& datalen) override;
 
-    std::string getIpAddress();
+    std::string GetIpAddress();
     uint32_t getPortNumber();
 
 private:

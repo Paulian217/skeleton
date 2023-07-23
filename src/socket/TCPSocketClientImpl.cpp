@@ -42,9 +42,9 @@ SocketResult TCPSocketClientImpl::Read(ByteBuffer& buffer) {
 }
 
 SocketResult TCPSocketClientImpl::Close() {
-    SocketResult result = -1;
-    result = close(mSocketFd);
-    result = shutdown(mSocketFd, SHUT_RDWR);
+    SocketResult result = 0;
+    (void)close(mSocketFd);
+    (void)shutdown(mSocketFd, SHUT_RDWR);
     return result;
 }
 
@@ -54,10 +54,6 @@ SocketResult TCPSocketClientImpl::Configure(const int& opt, const int& optname, 
     return result;
 }
 
-std::string TCPSocketClientImpl::getIpAddress() {
-    return mSocketAddress.getIpv4();
-}
+std::string TCPSocketClientImpl::GetIpAddress() { return mSocketAddress.getIpv4(); }
 
-uint32_t TCPSocketClientImpl::getPortNumber() {
-    return mSocketAddress.getPort();
-}
+uint32_t TCPSocketClientImpl::getPortNumber() { return mSocketAddress.getPort(); }

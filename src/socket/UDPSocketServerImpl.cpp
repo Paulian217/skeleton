@@ -5,8 +5,7 @@
 #include <unistd.h>
 
 UDPSocketServerImpl::UDPSocketServerImpl(SocketFD& socketfd)
-    : mSocketFd(socket(PF_INET, SOCK_DGRAM, 0)),
-      mSocketState((mSocketFd != NO_SOCKFD) ? SocketState::CREATED : SocketState::CLOSED) {
+    : mSocketFd(socket(PF_INET, SOCK_DGRAM, 0)), mSocketState((mSocketFd != NO_SOCKFD) ? SocketState::CREATED : SocketState::CLOSED) {
     socketfd = mSocketFd;
 }
 
@@ -21,8 +20,14 @@ SocketResult UDPSocketServerImpl::Open(const SocketAddressIn& addr, const int32_
         }
     }
 
+    size_t bufSize;
+    socklen_t len;
+    getsockopt(mSocketFd, SOL_SOCKET, SO_SNDBUF, &bufSize, &len);
+    printf("socket buffer size: %lu\n", bufSize);
+
     result = bind(mSocketFd, (struct sockaddr*)&addr.sockaddr_in, sizeof(addr.sockaddr_in));
     if (result < 0) {
+        fprintf(stderr, "Fail to bind\n");
         return result;
     }
     mSocketState = SocketState::OPENED;
@@ -63,9 +68,8 @@ SocketResult UDPSocketServerImpl::Write(const ByteBuffer& buffer, const SocketAd
         return result;
     }
 
-    result = sendto(mSocketFd, buffer.data(), buffer.size(), 0, (struct sockaddr*)&addrin.sockaddr_in,
-                    sizeof(addrin.sockaddr_in));
-    if (result == -1) {
+    result = sendto(mSocketFd, buffer.data(), buffer.size(), 0, (struct sockaddr*)&addrin.sockaddr_in, sizeof(addrin.sockaddr_in));
+    if (result < 0) {
         fprintf(stderr, "UDPSocketServerImpl::%s() sendto error\n", __func__);
         return result;
     }
@@ -86,3 +90,7 @@ SocketResult UDPSocketServerImpl::Close() {
 SocketResult UDPSocketServerImpl::Configure(const int& opt, const int& optname, const void* data, const size_t& datalen) {
     return setsockopt(mSocketFd, opt, optname, data, datalen);
 }
+
+std::string UDPSocketServerImpl::GetIpAddress() const { return mSocketAddress.getIpv4(); }
+
+uint32_t UDPSocketServerImpl::GetPortNumber() const { return mSocketAddress.getPort(); }

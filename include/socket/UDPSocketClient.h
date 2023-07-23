@@ -16,13 +16,12 @@ public:
     virtual ~UDPSocketClient();
 
     SocketResult Connect(const SocketAddressIn& address);
-    SocketResult Send(const ByteBuffer& buffer);
+    SocketResult Post(const ByteBuffer& buffer);
     SocketResult Disconnect();
-    std::string getIpAddress() const;
+    std::string GetIpAddress() const;
     uint32_t getPortNumber() const;
 
 private:
-    bool mIsConnected = false;
     std::unique_ptr<Thread> mReceiver;
     std::unique_ptr<UDPSocketClientImpl> mImpl;
     std::unique_ptr<UDPSocketClientCondition> mCondition;

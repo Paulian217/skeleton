@@ -6,8 +6,7 @@
 #include <unistd.h>
 
 UDPSocketClientImpl::UDPSocketClientImpl(SocketFD& socketfd)
-    : mSocketFd(socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)),
-      mSocketState((mSocketFd != NO_SOCKFD) ? SocketState::CREATED : SocketState::CLOSED) {
+    : mSocketFd(socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)), mSocketState((mSocketFd != NO_SOCKFD) ? SocketState::CREATED : SocketState::CLOSED) {
     socketfd = mSocketFd;
 }
 
@@ -23,17 +22,18 @@ SocketResult UDPSocketClientImpl::Open(const SocketAddressIn& addr) {
 
 SocketResult UDPSocketClientImpl::Write(const ByteBuffer& buffer) {
     SocketResult result = -1;
-    auto sendsize = sendto(mSocketFd, buffer.data(), buffer.size(), 0, (struct sockaddr*)&mSocketAddress.sockaddr_in,
-                           sizeof(mSocketAddress.sockaddr_in));
+    auto sendsize =
+        sendto(mSocketFd, buffer.data(), buffer.size(), 0, (struct sockaddr*)&mSocketAddress.sockaddr_in, sizeof(mSocketAddress.sockaddr_in));
     result = (sendsize != -1) ? 0 : -1;
+    if (result == -1)
+        printf("--------------Write() Failed\n");
     return result;
 }
 
 SocketResult UDPSocketClientImpl::Read(ByteBuffer& buffer) {
     SocketResult result = -1;
 
-    buffer.resize(1024);
-    unsigned char buf[1024];
+    buffer.resize(16);
     struct sockaddr_in sockaddr_in;
     socklen_t socklen = socklen_t();
 
@@ -65,10 +65,6 @@ SocketResult UDPSocketClientImpl::Configure(const int& opt, const int& optname, 
     return setsockopt(mSocketFd, opt, optname, data, datalen);
 }
 
-std::string UDPSocketClientImpl::getIpAddress() {
-    return mSocketAddress.getIpv4();
-}
+std::string UDPSocketClientImpl::GetIpAddress() { return mSocketAddress.getIpv4(); }
 
-uint32_t UDPSocketClientImpl::getPortNumber() {
-    return mSocketAddress.getPort();
-}
+uint32_t UDPSocketClientImpl::getPortNumber() { return mSocketAddress.getPort(); }

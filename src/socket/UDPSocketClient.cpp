@@ -21,34 +21,45 @@ UDPSocketClient::~UDPSocketClient() { Disconnect(); }
 
 SocketResult UDPSocketClient::Connect(const SocketAddressIn& address) {
     SocketResult result = -1;
-    (void)mImpl->Open(address);
 
-    mReceiver = std::move(std::make_unique<std::thread>([this]() {
+    result = mImpl->Open(address);
+    mCondition->quit.store(false);
+
+    mReceiver = std::make_unique<std::thread>([this]() {
+        static auto repeats = 0;
         while (!mCondition->quit.load()) {
+            repeats++;
             ByteBuffer buffer;
+            if (repeats % 10000 == 0) {
+                // printf("Read() ++\n");
+            }
             if (mImpl->Read(buffer) != -1) {
                 mListeners->onBufferReceived(buffer);
+                printf("Read() 00 %s\n", buffer.data());
+            } else if (repeats % 50000 == 0) {
+                printf("Read() --\n");
             }
         }
-    }));
-
-    mIsConnected = true;
+    });
     return result;
 }
 
-SocketResult UDPSocketClient::Send(const ByteBuffer& buffer) {
+SocketResult UDPSocketClient::Post(const ByteBuffer& buffer) {
     SocketResult result = 0;
-    std::future<int> future = std::async(std::launch::async, [&] { return mImpl->Write(buffer); });
+    auto future = std::async([&] {
+        if (!mCondition->quit.load()) {
+            printf("Post() : %s\n", buffer.data());
+            return mImpl->Write(buffer);
+        }
+        return -1;
+    });
     result = future.get();
+    // result = mImpl->Write(buffer);
     return result;
 }
 
 SocketResult UDPSocketClient::Disconnect() {
     SocketResult result = 0;
-    if (!mIsConnected) {
-        return result;
-    }
-
     mCondition->quit.store(true);
 
     if (mReceiver->joinable()) {
@@ -58,6 +69,6 @@ SocketResult UDPSocketClient::Disconnect() {
     return result;
 }
 
-std::string UDPSocketClient::getIpAddress() const { return mImpl->getIpAddress(); }
+std::string UDPSocketClient::GetIpAddress() const { return mImpl->GetIpAddress(); }
 
 uint32_t UDPSocketClient::getPortNumber() const { return mImpl->getPortNumber(); }

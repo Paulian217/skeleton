@@ -24,34 +24,36 @@ TCPSocketClient::~TCPSocketClient() {
 
 SocketResult TCPSocketClient::Connect(const SocketAddressIn& address) {
     SocketResult result = -1;
-    (void)mImpl->Open(address);
+
+    result = mImpl->Open(address);
+    mCondition->quit.store(false);
 
     mReceiver = std::move(std::make_unique<std::thread>([this]() {
         while (!mCondition->quit.load()) {
             ByteBuffer buffer;
-            // printf("TCPSocketClient::Read(), %d\n", mCondition->quit.load());
             if (mImpl->Read(buffer) != -1) {
                 mListeners->onBufferReceived(buffer);
             }
         }
     }));
 
-    mIsConnected = true;
     return result;
 }
 
-SocketResult TCPSocketClient::Send(const ByteBuffer& buffer) {
+SocketResult TCPSocketClient::Post(const ByteBuffer& buffer) {
     SocketResult result = 0;
-    std::future<int> future = std::async(std::launch::async, [&]() { return mImpl->Write(buffer); });
+    auto future = std::async([&] {
+        if (!mCondition->quit.load()) {
+            return mImpl->Write(buffer);
+        }
+        return -1;
+    });
     result = future.get();
     return result;
 }
 
 SocketResult TCPSocketClient::Disconnect() {
     SocketResult result = 0;
-    if (!mIsConnected) {
-        return result;
-    }
 
     mCondition->quit.store(true);
 
@@ -62,10 +64,6 @@ SocketResult TCPSocketClient::Disconnect() {
     return result;
 }
 
-std::string TCPSocketClient::getIpAddress() const {
-    return mImpl->getIpAddress();
-}
+std::string TCPSocketClient::GetIpAddress() const { return (mImpl != nullptr) ? mImpl->GetIpAddress() : "0.0.0.0"; }
 
-uint32_t TCPSocketClient::getPortNumber() const {
-    return mImpl->getPortNumber();
-}
+uint32_t TCPSocketClient::GetPortNumber() const { return (mImpl != nullptr) ? mImpl->getPortNumber() : 0; }

@@ -1,40 +1,32 @@
 // echo_server.c
-#include <socket/UDPSocketServerImpl.h>
+#include <signal.h>
+#include <socket/UDPSocketServer.h>
+
+UDPSocketServer* server;
 
 void error_handling(char* message);
+void signal_handle(int sig) { server->Shutdown(); }
 
 int main(int argc, char* argv[]) {
-    int sock;
-    int str_len;
-    socklen_t clnt_adr_sz;
-
-    struct sockaddr_in serv_adr, clnt_adr;
+    signal(SIGINT, signal_handle);
+    signal(SIGTERM, signal_handle);
     if (argc != 2) {
         printf("Usage : %s <port> \n", argv[0]);
         exit(1);
     }
 
-    UDPSocketServerImpl server(sock);
-    if (sock == -1)
-        error_handling("UDP socket creation error");
+    UDPSocketServer::SocketHandler handler = [&](UDPSocketServer* self, const auto& address, const auto& buffer) {
+        printf("Received Buffer: %s\n", buffer.data());
+        self->Post(address, buffer);
+    };
+    UDPSocketServer socketServer(handler);
+    server = &socketServer;
 
-    if (server.Open(SocketAddressIn("0.0.0.0", atoi(argv[1]))) == -1)
-        error_handling("bind() error");
-
-    while (1) {
-        SocketAddressIn sockaddrin;
-        ByteBuffer buffer;
-        if (-1 == server.Read(buffer, sockaddrin)) {
-            error_handling("read() error");
-        }
-
-        printf("Message from client: \"%s\"\n", buffer.data());
-
-        if (-1 == server.Write(buffer, sockaddrin)) {
-            error_handling("write() error");
-        }
+    if (socketServer.Listen(SocketAddressIn("0.0.0.0", atoi(argv[1])), true) == -1) {
+        error_handling("Fail to listen");
     }
-    server.Close();
+
+    socketServer.Shutdown();
     return 0;
 }
 

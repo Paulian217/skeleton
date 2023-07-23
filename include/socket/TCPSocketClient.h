@@ -16,13 +16,13 @@ public:
     virtual ~TCPSocketClient();
 
     SocketResult Connect(const SocketAddressIn& address);
-    SocketResult Send(const ByteBuffer& buffer);
+    SocketResult Post(const ByteBuffer& buffer);
     SocketResult Disconnect();
-    std::string getIpAddress() const;
-    uint32_t getPortNumber() const;
+
+    std::string GetIpAddress() const;
+    uint32_t GetPortNumber() const;
 
 private:
-    bool mIsConnected = false;
     std::unique_ptr<Thread> mReceiver;
     std::unique_ptr<TCPSocketClientImpl> mImpl;
     std::unique_ptr<TCPSocketClientCondition> mCondition;
